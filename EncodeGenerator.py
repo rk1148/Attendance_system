@@ -33,14 +33,17 @@ for path in PathList:
     studentIds.append(os.path.splitext(path)[0])
 
 *************************************************** step-3
-    
-# step-6 add data to database
+
+
+//***********************************************************
+# step-7 add data to database
     fileName = f'{folderPath}/{path}'
     bucket = storage.bucket()
     blob = bucket.blob(fileName)
     blob.upload_from_filename(fileName)
-# stpe-6
-print(studentIds)
+# step-7
+*********************************************************//
+# print(studentIds)
 
 
 
