@@ -22,18 +22,19 @@ firebase_admin.initialize_app(cred,{
 
 bucket = storage.bucket()
 
-
+//***************************************** step-1
 vedio_capture = cv2.VideoCapture(0)
 vedio_capture.set(3,640)   #width of webcam window
 vedio_capture.set(4,480)    #height of webcam window
 
-
-imgBackground = cv2.imread('Resources/background.png')
+************************************ step-1
 
 
 
 
 /***************  step -2 --> graphics(import all the pictures for background graphics)
+
+imgBackground = cv2.imread('Resources/background.png')
 #importing the mode images into a list
 folderModePath = 'Resources/Modes'
 modePathList = os.listdir(folderModePath)
@@ -42,11 +43,11 @@ imgModeList = []
 for path in modePathList:
     imgModeList.append(cv2.imread(os.path.join(folderModePath,path)))
 # print(len(imgModeList))
-/************ step-2
+/************************************** step-2
 
 
 
-
+/************************************  step -4 Face recgnition
 # load the encoding file
 print("Loading Encode file....")
 file = open('EncodeFile.p','rb')
@@ -71,7 +72,7 @@ while True:
     #image size ko chota krne k lia beacause it takes a lot of computation power
     imgS = cv2.resize(img,(0,0),None,0.25,0.25)
     #conver it from rgb to bgr
-    imgS = cv2.cvtColor(imgS,cv2.COLOR_BGR2RGB)
+    imgS = cv2.cvtColor(imgS,cv2.COLOR_BGR2RGB)            // step-3
 
     # once we done we need to feed in the value to our face recognition system it will detect and then it will give us some output . we need two things, 1. the faces in the current frame 2. encodeings in the current frame
     faceCurFrame = face_recognition.face_locations(imgS)
