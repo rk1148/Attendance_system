@@ -6,18 +6,18 @@ import face_recognition
 import cvzone
 
 #step-7  
-import firebase_admin
-from firebase_admin import credentials
-from firebase_admin import db
+import firebase_admin                                                                     # step-4
+from firebase_admin import credentials                                                    # step-4
+from firebase_admin import db                                                             # step-5
 from firebase_admin import storage
 
 
 from datetime import datetime
 
-cred = credentials.Certificate("ServiceAccountKey.json")
-firebase_admin.initialize_app(cred,{
-    'databaseURL' :"https://faceattendancerealtime-a6e5b-default-rtdb.firebaseio.com/" ,
-    'storageBucket':"faceattendancerealtime-a6e5b.appspot.com"
+cred = credentials.Certificate("ServiceAccountKey.json")                                   # step-4
+firebase_admin.initialize_app(cred,{                                                       # step-4
+    'databaseURL' :"https://faceattendancerealtime-a6e5b-default-rtdb.firebaseio.com/" ,   # step-4
+    'storageBucket':"faceattendancerealtime-a6e5b.appspot.com"                             # step-6
 })
 
 bucket = storage.bucket()
@@ -32,7 +32,7 @@ vedio_capture.set(4,480)    #height of webcam window
 
 
 
-/***************  step -2 --> graphics(import all the pictures for background graphics)
+// ***************  step -2 --> graphics(import all the pictures for background graphics)
 ## import the mode images into the list 
 imgBackground = cv2.imread('Resources/background.png')
 #importing the mode images into a list
@@ -47,7 +47,7 @@ for path in modePathList:
 
 
 
-/************************************  step -4 Face recgnition
+//************************************  step -4 Face recgnition
 # load the encoding file
 print("Loading Encode file....")
 file = open('EncodeFile.p','rb')
@@ -62,18 +62,22 @@ modeType = 0
 counter =  0
 id = -1
 imgStudent = [] 
+****************************************//   step-4 
 
 
 #overlay(ek k uper ek) webcam on the backgroung img
-while True:
-    success, img = vedio_capture.read()
+while (True):                                                //step-1
+    success, img = vedio_capture.read()                    //step-1
 
 
     #image size ko chota krne k lia beacause it takes a lot of computation power
-    imgS = cv2.resize(img,(0,0),None,0.25,0.25)
+    imgS = cv2.resize(img,(0,0),None,0.25,0.25)            // step-4
     #conver it from rgb to bgr
     imgS = cv2.cvtColor(imgS,cv2.COLOR_BGR2RGB)            // step-3
 
+
+
+//**************************************** step-4  (Face-recognition)
     # once we done we need to feed in the value to our face recognition system it will detect and then it will give us some output . we need two things, 1. the faces in the current frame 2. encodeings in the current frame
     faceCurFrame = face_recognition.face_locations(imgS)
     encodeCurrFrame = face_recognition.face_encodings(imgS,faceCurFrame)
@@ -101,6 +105,9 @@ while True:
                 y1, x2, y2, x1 = y1*4, x2*4, y2*4, x1*4
                 bbox = 55+x1,162+y1, x2-x1, y2-y1
                 imgBackground = cvzone.cornerRect(imgBackground, bbox, rt=0) #rt = rectangle thickness
+************************************************//   step-4
+
+
 
                 #step7
                 id = studentIds[matchIndex]
