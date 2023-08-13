@@ -17,7 +17,7 @@ firebase_admin.initialize_app(cred,{
 # step-6 
 
 
-
+/**********   step-3  Ending generator  *********////
 #importing students images 
 folderPath = 'Images'
 PathList = os.listdir(folderPath)
@@ -31,6 +31,8 @@ for path in PathList:
     #print(os.path.splitext(path)[0])
     studentIds.append(os.path.splitext(path)[0])
 
+*************************************************** step-3
+    
 # step-6 add data to database
     fileName = f'{folderPath}/{path}'
     bucket = storage.bucket()
@@ -40,6 +42,8 @@ for path in PathList:
 print(studentIds)
 
 
+
+/**********   step-3  Ending generator  *********////
 # #to create /run the encodings
 # def findEncodings(imagesList):
 
@@ -58,6 +62,9 @@ print(studentIds)
 # encodeListKnown = findEncodings(imgList)
 # encodeListKnownWithIds = [encodeListKnown,studentIds]
 # print("Encoding complete")
+
+************************************///*********** step-3
+
 
 # #jo bhi data h means ids & images ko file me save kr lege
 # file = open("EncodeFile.p",'wb')
