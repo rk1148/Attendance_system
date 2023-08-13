@@ -59,7 +59,7 @@ print(studentIds)
 # encodeListKnownWithIds = [encodeListKnown,studentIds]
 # print("Encoding complete")
 
-# #jo bhi data h meand ids & images ko file me save kr lege
+# #jo bhi data h means ids & images ko file me save kr lege
 # file = open("EncodeFile.p",'wb')
 # pickle.dump(encodeListKnownWithIds,file)
 # file.close()
