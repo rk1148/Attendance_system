@@ -33,7 +33,7 @@ vedio_capture.set(4,480)    #height of webcam window
 
 
 /***************  step -2 --> graphics(import all the pictures for background graphics)
-
+## import the mode images into the list 
 imgBackground = cv2.imread('Resources/background.png')
 #importing the mode images into a list
 folderModePath = 'Resources/Modes'
