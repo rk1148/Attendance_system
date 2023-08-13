@@ -60,15 +60,25 @@ file.close()
 encodeListKnown,studentIds = encodeListKnownWithIds
 # print(studentIds)
 print("Encode File Loaded")
-
-#step-7
-modeType = 0
-counter =  0
-id = -1
-imgStudent = [] 
 ****************************************//   step-4 
 
 
+
+
+//***************************************
+*/****  step-8  Real time database update
+modeType = 0                                        # first we have to show that it is on active mode.
+counter =  0                                        
+id = -1
+imgStudent = [] 
+
+/*******************************************
+
+
+
+
+
+    
 #overlay(ek k uper ek) webcam on the backgroung img
 while (True):                                                //step-1
     success, img = vedio_capture.read()                    //step-1
@@ -78,6 +88,8 @@ while (True):                                                //step-1
     imgS = cv2.resize(img,(0,0),None,0.25,0.25)            // step-4
     #conver it from rgb to bgr
     imgS = cv2.cvtColor(imgS,cv2.COLOR_BGR2RGB)            // step-3
+
+
 
 
 
@@ -113,7 +125,8 @@ while (True):                                                //step-1
 
 
 
-                #step7
+
+//*****/****  step-8  Real time database update
                 id = studentIds[matchIndex]
                 # print(id)
                 if counter == 0:
@@ -175,7 +188,7 @@ while (True):                                                //step-1
                     
                     #name ko shi jgh pr rkhne k lia twxt ka size find krk, use total length me se minus krk use divide by 2 pe jo jgh aayega ,vhi se ise start krege.
                     (w,h), _ = cv2.getTextSize(studentInfo['name'],cv2.FONT_HERSHEY_COMPLEX,1,1)
-                    offset = (414-w)//2
+                    offset = (414-w)/2
                     cv2.putText(imgBackground,str(studentInfo['name']),(808+offset,445),
                                 cv2.FONT_HERSHEY_COMPLEX,1,(50,50,50),1)
                     
