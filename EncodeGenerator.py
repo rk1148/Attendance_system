@@ -3,18 +3,19 @@ import cv2
 import os
 import pickle
 
-# step-6 add data to data-base
+# step-7 add data and images to data-base
+//**************************************
 import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import db
-from firebase_admin import storage                        # step-7
+from firebase_admin import storage                       
 
 cred = credentials.Certificate("ServiceAccountKey.json")
 firebase_admin.initialize_app(cred,{
     'databaseURL' :"https://faceattendancerealtime-a6e5b-default-rtdb.firebaseio.com/" ,
     'storageBucket':"faceattendancerealtime-a6e5b.appspot.com"
 })
-# step-6 
+/**********************************///      step-7 
 
 
 /**********   step-3  Ending generator  *********////
