@@ -5,7 +5,7 @@ import cv2
 import face_recognition
 import cvzone
 
-#step-7  
+//**************************************     step-7  
 import firebase_admin                                                                     # step-4
 from firebase_admin import credentials                                                    # step-4
 from firebase_admin import db                                                             # step-5
@@ -17,10 +17,14 @@ from datetime import datetime
 cred = credentials.Certificate("ServiceAccountKey.json")                                   # step-4
 firebase_admin.initialize_app(cred,{                                                       # step-4
     'databaseURL' :"https://faceattendancerealtime-a6e5b-default-rtdb.firebaseio.com/" ,   # step-4
-    'storageBucket':"faceattendancerealtime-a6e5b.appspot.com"                             # step-6
+    'storageBucket':"faceattendancerealtime-a6e5b.appspot.com"                             # step-7
 })
 
 bucket = storage.bucket()
+***************************************//     step-7
+
+
+
 
 //***************************************** step-1
 vedio_capture = cv2.VideoCapture(0)
