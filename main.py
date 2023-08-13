@@ -144,8 +144,10 @@ while (True):                                                //step-1
                 print(studentInfo) 
                 # get the image from the storage
                 blob = bucket.get_blob(f'Images/{id}.png')
-                array = np.frombuffer(blob.download_as_string(),np.uint8)
-                imgStudent = cv2.imdecode(array, cv2.COLOR_BGRA2BGR) 
+                array = np.frombuffer(blob.download_as_string(),np.uint8)          # store all the images in a array.
+                imgStudent = cv2.imdecode(array, cv2.COLOR_BGRA2BGR)               # convert all the image of array so that we can use it in opencv.
+                
+                
                 #step-8 update data of attendance
                 datetimeObject = datetime.strptime(studentInfo['last_attendance_time'],"%Y-%m-%d %H:%M:%S")
 
