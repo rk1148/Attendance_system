@@ -31,6 +31,9 @@ vedio_capture.set(4,480)    #height of webcam window
 imgBackground = cv2.imread('Resources/background.png')
 
 
+
+
+/***************  step -2 --> graphics(import all the pictures for background graphics)
 #importing the mode images into a list
 folderModePath = 'Resources/Modes'
 modePathList = os.listdir(folderModePath)
@@ -39,6 +42,10 @@ imgModeList = []
 for path in modePathList:
     imgModeList.append(cv2.imread(os.path.join(folderModePath,path)))
 # print(len(imgModeList))
+/************ step-2
+
+
+
 
 # load the encoding file
 print("Loading Encode file....")
