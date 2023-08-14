@@ -126,7 +126,7 @@ while (True):                                                //step-1
 
 
 
-//*****/****  step-8  Real time database update
+//***************************step-8  Real time database update
                 id = studentIds[matchIndex]
                 # print(id)
                 if counter == 0:
